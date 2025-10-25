@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+  /*Dashboard content*/
+  .content-main {
+    @apply flex-1 items-center min-h-full rounded-tl-[1vw] py-8 md:px-10 px-4 w-full;
+    box-shadow: 0 0 18px -8px rgb(131 131 131 / 40%);
+  }
+
+  .h-screen {
+    @apply bg-white;
+  }
+
+  .top-nav-welcome {
+    @apply w-[300px] bg-gray-50 pt-8 ;
+  }
+
+  .top-nav-welcome ul {
+    @apply flex flex-col gap-[20px] pe-6;
+  }
+
+  .top-nav-welcome ul li {
+    @apply flex items-center gap-[10px] px-3 hover:bg-principal rounded-r-lg p-2 cursor-pointer;
+  }
+
+  .users-main {
+    @apply items-center justify-end;
+  }
+
+  .li-active {
+    @apply bg-principal50 font-semibold;
+  }
+
+  /***/
+  .title {
+    @apply text-5xl font-bold;
+  }
+
+  .p-title {
+    @apply text-3xl font-bold;
+  }
+
+  .p-text {
+    @apply text-lg;
+  }
+
+  .label-input {
+    @apply block text-sm/6 font-medium text-gray-900 max-sm:text-[13px];
+  }
+
+  .btn {
+    @apply bg-principal font-bold text-white px-4 py-2 rounded-full hover:bg-principalHover transition;
+  }
+
+  .card {
+    @apply shadow-custom p-2 rounded-lg;
+  }
+
+  .card-message {
+    @apply flex mt-auto shadow-custom gap-4 mt-10 items-center;
+  }
+
+  .view-login {
+    @apply flex min-h-screen;
+  }
+
+  .btn-black {
+    @apply bg-black hover:bg-gray-950 shadow-miAmarillo text-white;
+  }
+
+  .btn-border {
+    @apply border-principal text-principal hover:text-gray-700 hover:border-gray-700;
+  }
+
+  .t-input,
+  textarea, .t-select select  {
+    @apply block border border-gray-400 w-full rounded-md px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-principal placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-1 focus:outline-black sm:text-sm/6;
+  }
+  input[type="number"]{
+    @apply [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none;
+  }
+  .main-dashboard {
+    @apply flex h-full;
+  }
+
+  .logo-comercial {
+    @apply relative md:size-[150px] size-[80px] rounded-full overflow-hidden m-auto md:-mt-[70px] -mt-[30px] cursor-pointer;
+  }
+  .c-dates{
+    @apply mt-4;
+  }
+  .card-top{
+   @apply bg-gray-50 rounded-lg  mt-4 p-3 md:flex gap-4 justify-end flex-1 items-center
+  }
+ 
+}
