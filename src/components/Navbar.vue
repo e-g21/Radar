@@ -5,7 +5,7 @@
         <img src="@/assets/img/logo-radar.png" alt="Logo" class="md:h-10" />
       </div>
       <div class="flex items-center justify-end gap-2 md:gap-7 col-span-2  md:col-span-1">
-        <a href="#Cerrar-Sesión" class="hidden md:flex text-label text-black hover:text-gray-400 items-center gap-2">
+        <a href="#Cerrar-Sesión" @click="logout" class="hidden md:flex text-label text-black hover:text-gray-400 items-center gap-2">
           <font-awesome-icon :icon="['fas', 'angle-left']" class="border py-1 rounded-sm" />
           Cerrar Sesión
         </a>
@@ -40,10 +40,10 @@
               <p class="text-label text-black">Plan: <strong class="text-principal">Premiun</strong> </p>
             </li>
             <li class="py-3 ">
-              <a href="#Cerrar-Sesión" class="text-label text-black hover:text-gray-400 flex items-center gap-2">
+              <button href="#bye" @click="logout" class="text-label text-black hover:text-gray-400 flex items-center gap-2">
                 <font-awesome-icon :icon="['fas', 'angle-left']" class="border py-1 rounded-sm" />
                 Cerrar Sesión
-              </a>
+              </button>
             </li>
 
           </ul>
@@ -97,5 +97,6 @@
 </template>
 <script setup>
 defineEmits(["toggleSidebar"]);
-
+import { useAuth } from "@/composables/useAuth";
+const { logout } = useAuth();
 </script>

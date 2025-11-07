@@ -1,0 +1,7 @@
+{"successful":true,"message":"Usuario registrado exitosamente",
+"data":{"token":"14|pp0HrO14SgUpSx3pjbktIa9BLn62j38L7N8vnmuNd08a3d15",
+"user":{"name":"Eylin Gomez","email":"eylin@example.com",
+"phone_number":"04246080069",
+"image":null,"id_status":1,
+"updated_at":"2025-10-28T15:57:09.000000Z",
+"created_at":"2025-10-28T15:57:09.000000Z","id":105}}}

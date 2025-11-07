@@ -3,7 +3,7 @@
   <div class="welcome-content">
     <div class="text-center my-[15%]">
       <h1 class="title">
-        ¡Hola Andrés!👋<br />
+        ¡Hola {{ user?.name || 'Usuario' }}!👋<br />
         Bienvenido
       </h1>
       <p class="p-text my-8">
@@ -35,6 +35,8 @@
 </template>
 
 <script setup>
+import { useAuth } from "@/composables/useAuth";
+const { user} = useAuth();
 defineEmits(["toggle-menu"]);
 
 </script>

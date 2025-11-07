@@ -1,5 +1,13 @@
 module.exports = {
   lintOnSave: false,
-  //publicPath: './',   // rutas relativas, funciona bien en subdominios
-  //outputDir: 'dist'
-}
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'https://testapi.radarapp.net',
+        changeOrigin: true,
+        secure: false,
+        pathRewrite: { '^/api': '/api' },
+      },
+    },
+  },
+};

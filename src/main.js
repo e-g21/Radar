@@ -1,34 +1,45 @@
-import { createApp } from 'vue'
+import { createApp, onMounted } from 'vue'
 import App from './App.vue'
-import './assets/main.css' // Tailwind
-import 'flowbite'             // importa el JS de Flowbite (activa dropdowns, modals, etc.)
-import { onMounted } from 'vue';
-import { initFlowbite } from 'flowbite'; // <-- ¡Esta es la clave!
+import axios from 'axios'
 
-import { useScreen } from './composables/useScreen'
+// Estilos y librerías
+import './assets/main.css'  // Tailwind
+import 'flowbite'
+import { initFlowbite } from 'flowbite'
+
 // Font Awesome
-import { library, byPrefixAndName} from '@fortawesome/fontawesome-svg-core'
+import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { fas } from '@fortawesome/free-solid-svg-icons' // todos los solid
-// 👇 Importa el brand que necesitas
-import { fab, faSquareFacebook } from '@fortawesome/free-brands-svg-icons'
-//Router
+import { fas } from '@fortawesome/free-solid-svg-icons'   // todos los íconos solid
+import { fab } from '@fortawesome/free-brands-svg-icons'  // todos los íconos de marcas
+
+// Router
 import router from './router'
 
+// Composables
+import { useScreen } from './composables/useScreen'
 
+// Inicializa Flowbite al montar
 onMounted(() => {
   initFlowbite()
 })
 
-
-
+// Agrega íconos a la librería global
 library.add(fas, fab)
-const app = createApp(App) 
-.use(router)
-// Agregar helper global
-const { screen } = useScreen()
-app.config.globalProperties.$screen = screen
-app.component('font-awesome-icon', FontAwesomeIcon)
-app.provide('byPrefixAndName', byPrefixAndName)
 
+// Crea la app
+const app = createApp(App)
+
+// Usa router y helpers globales
+app.use(router)
+
+const { screen } = useScreen()
+
+app.config.globalProperties.$axios = axios
+app.config.globalProperties.$screen = screen
+
+// Componente global para íconos
+app.component('font-awesome-icon', FontAwesomeIcon)
+
+// Monta la app
 app.mount('#app')

@@ -1,16 +1,19 @@
-# Dependencias
+# ⛔ Carpetas a ignorar
 node_modules/
-
-# Archivos compilados
 dist/
-
-# Variables de entorno
 .env
-
-# Archivos de sistema
+.env.local
 .DS_Store
 
-# Logs
+# 🧩 Archivos de sistema
+Thumbs.db
+.vscode/
+.idea/
+
+# 🔧 Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# 🧰 Dependencias de producción
+package-lock.json
