@@ -16,7 +16,7 @@ const routes = [
     path: '/bienvenido',
     name: 'Bienvenido',
     component: () => import('@/components/DashboardLayout.vue'),
-    meta: { requiresAuth: false } // ✅ Protegida con token
+    meta: { requiresAuth: true } // ✅ Protegida con token
   },
 
   // 🔹 Cualquier ruta inválida
